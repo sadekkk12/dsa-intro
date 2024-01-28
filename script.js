@@ -1,44 +1,44 @@
 "use strict";
-
+💯 ✅ 🤔 ❌
 window.addEventListener("DOMContentLoaded", start);
 
-function start() {
-  console.log("JavaScript kører");
-  hideAll();
-  askAboutName();
+function start() {  
+  console.log("JavaScript kører");💯
+  hideAll();💯
+  askAboutName();💯
 }
 
 function hideAll() {
-  document.querySelector("#ask-name").classList.add("hide");
-  document.querySelector("#ask-age").classList.add("hide");
-  document.querySelector("#ask-birthyear").classList.add("hide");
-  document.querySelector("#success").classList.add("hide");
-  document.querySelector("#failure").classList.add("hide");
+  document.querySelector("#ask-name").classList.add("hide");✅
+  document.querySelector("#ask-age").classList.add("hide");✅
+  document.querySelector("#ask-birthyear").classList.add("hide");✅
+  document.querySelector("#success").classList.add("hide");✅
+  document.querySelector("#failure").classList.add("hide");✅
 }
 
 function fillInFields(fieldname, value) {
-  document.querySelectorAll(`[data-field=${fieldname}]`).forEach(element => (element.textContent = value));
+  document.querySelectorAll(`[data-field=${fieldname}]`).forEach(element => (element.textContent = value)); 🤔
 }
 
 function askAboutName() {
-  const form = document.querySelector("#ask-name");
-  form.addEventListener("submit", answeredName);
-  form.classList.remove("hide");
+  const form = document.querySelector("#ask-name"); 💯
+  form.addEventListener("submit", answeredName); 💯
+  form.classList.remove("hide"); 💯
 }
 
 function answeredName(event) {
-  event.preventDefault();
+  event.preventDefault(); 💯
 
-  const form = event.target;
-  form.removeEventListener("submit", answeredName);
-  form.querySelector("button").disabled = true;
+  const form = event.target; ✅
+  form.removeEventListener("submit", answeredName);✅
+  form.querySelector("button").disabled = true; 💯
 
-  const firstname = form.firstname.value;
-  console.log("Answered name: " + firstname);
+  const firstname = form.firstname.value; ✅
+  console.log("Answered name: " + firstname);  💯
 
-  fillInFields("firstname", firstname);
+  fillInFields("firstname", firstname); 💯
 
-  askAboutAge();
+  askAboutAge(); 💯
 }
 
 function askAboutAge() {
@@ -64,13 +64,13 @@ function answeredAge(event) {
 
 function askAboutBirthYear(age) {
   // calculate birthyear - expect that the person HASN'T had their birthday yet this year
-  const birthyear = 2024 - 1 - age;
+  const birthyear = 2024 - 1 - age; 💯
 
-  fillInFields("birthyear", birthyear);
+  fillInFields("birthyear", birthyear);  💯
 
-  const form = document.querySelector("#ask-birthyear");
-  form.addEventListener("submit", answeredBirthyear);
-  form.classList.remove("hide");
+  const form = document.querySelector("#ask-birthyear"); 💯
+  form.addEventListener("submit", answeredBirthyear);💯
+  form.classList.remove("hide"); 💯
 }
 
 function answeredBirthyear(event) {
@@ -80,10 +80,10 @@ function answeredBirthyear(event) {
   form.removeEventListener("submit", answeredBirthyear);
   form.querySelector("button").disabled = true;
 
-  const correct = form.correct.value;
-  console.log("Answered correct: " + correct);
+  const correct = form.correct.value; 💯
+  console.log("Answered correct: " + correct); 💯
 
-  if (correct === "yes") {
+  if (correct === "yes") { 💯
     showSuccess();
   } else {
     showFailure();
